@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Build') {
             agent {
-                docker {image 'maven:3.6.3-jdk-11'}
+                docker {image 'eclipse-temurin:21-jdk-jammy'}
             }
             steps {
                 echo 'Hello, Maven'
@@ -12,7 +12,7 @@ pipeline {
         }
         stage('Run') {
             agent {
-                docker {image 'openjdk:11.0.7-jdk-slim'}
+                docker {image 'openjdk:21.0.1-jdk-slim'}
             }
             steps {
                 echo 'Hello, JDK'
